@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import type { NextPage } from "next";
 import { Poppins } from 'next/font/google';
+import Image from 'next/image';
+
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -46,9 +48,10 @@ const SignupPage: NextPage = () => {
     <div className="min-h-screen flex">
       {/* Left Image Section */}
       <div className="hidden md:block md:w-1/2">
-        <img
+        <Image
           src="/images/SignUp.png"
           alt="Signup placeholder"
+          layout="fill"
           className="object-cover w-full h-full"
         />
       </div>
@@ -64,12 +67,16 @@ const SignupPage: NextPage = () => {
           </p>
 
           <button
-            type="button"
-            className="w-100 mx-auto flex items-center justify-center py-3 px-4 border border-gray-500  bg-white text-gray-700 font-medium shadow-sm hover:bg-gray-50 transition"
-          >
-            <GoogleIcon />
-            Continue with Google
+              type="button"
+              className="w-100 mx-auto flex items-center justify-center gap-2 py-3 px-4 border border-gray-500 bg-white text-gray-700 font-medium shadow-sm 
+                        hover:bg-gray-50 transition-colors duration-200 
+                        transform transition-transform duration-200 hover:scale-105 active:scale-95 
+                        hover:shadow-md"
+            >
+              <GoogleIcon />
+              Continue with Google
           </button>
+
 
           <div className="my-6 flex items-center">
             <div className="flex-grow border-t border-gray-300" />
@@ -111,11 +118,14 @@ const SignupPage: NextPage = () => {
               className="w-100 mx-auto flex justify-center px-4 py-3 border border-gray-300 text-gray-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
 
-            <button
-              type="submit"
-              className="w-100 mx-auto flex justify-center py-3 px-4 bg-blue-600 text-white font-medium hover:bg-blue-700 transition"
-            >
-              Create Now
+           <button
+                type="submit"
+                className="w-100 mx-auto flex justify-center py-3 px-4 bg-blue-600 text-white font-medium shadow-sm 
+                          hover:bg-blue-700 hover:shadow-md 
+                          transform transition-transform duration-200 hover:scale-105 active:scale-95 
+                          transition-colors"
+              >
+                Create Now
             </button>
           </form>
 

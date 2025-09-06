@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Azeret_Mono } from "next/font/google";
+import { Azeret_Mono, Poppins,Outfit } from "next/font/google";
 import "./globals.css";
 
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const azeretMono = Azeret_Mono({
   subsets: ["latin"],
   display: "swap", // or "block", "fallback"
 });
+//This is global poppons fonts
+const poppins = Poppins({
+   subsets: ["latin"],
+    variable: "--font-poppins" ,
+    weight: ['100','200','400'],
+  });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({
   subsets: ["latin"],
+  variable: "--font-outfit",
 });
+
 
 export const metadata: Metadata = {
   title: "Racan",
@@ -32,8 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${azeretMono.className}  antialiased`} //${geistMono.variable}
+        className={`${azeretMono.className} ${poppins.variable} ${outfit.variable} antialiased`} //${geistMono.variable}
       >
+        {/* <Navbar01 /> */}
         {children}
 
       </body>
